@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Memento22 | Coffee & Cuts Chania</title>
+  <meta name="description" content="Memento22 — Chania's first combined specialty coffee bar and modern barber concept. Book your cut or enjoy a single-origin espresso in the heart of Chania." />
+  <link rel="canonical" href="https://memento22.example.com/memento22.html" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:site_name" content="Memento22" />
+  <meta property="og:title" content="Memento22 | Coffee & Cuts Chania" />
+  <meta property="og:description" content="Chania's first combined specialty coffee bar and modern barber concept — book a visit or enjoy a coffee." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://memento22.example.com/memento22.html" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1576504677598-49a46e15a514?auto=format&fit=crop&w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@memento22" />
+
+  <!-- Structured data (basic) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Memento22",
+    "image": "https://memento22.example.com/og-image.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Old Harbor Lane",
+      "addressLocality": "Chania",
+      "postalCode": "73100",
+      "addressCountry": "GR"
+    },
+    "telephone": "+30-XXX-XXX-XXXX",
+    "url": "https://memento22.example.com"
+  }
+  </script>
+
+  <!-- Preconnect / Preload fonts & critical resources -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN (DEV). In production: compile Tailwind and serve a local CSS file (see README) -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+
+  <!-- Minimal critical CSS to avoid flash and style essential hero layout -->
+  <style>
+    :root{
+      --neon-purple:#b026ff;
+      --neon-cyan:#00f3ff;
+      --deep-bg:#0f0c29;
+      --mid-bg:#302b63;
+      --light-bg:#24243e;
+      --glass: rgba(255,255,255,0.06);
+    }
+    .skip-link{
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      padding: .5rem 1rem;
+      background: #000;
+      color: #fff;
+      z-index: 9999;
+    }
+    :focus{ outline: 3px solid var(--neon-cyan); outline-offset: 2px; }
+    .hero-container{ min-height: 70vh; display:flex; align-items:center; justify-content:center; position:relative; background: linear-gradient(90deg,var(--deep-bg),var(--mid-bg),var(--light-bg)); }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  </style>
+
+  <!-- Analytics snippet (Google Analytics example - update ID) -->
+  <!-- NOTE: follow privacy rules and get consent if needed -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
+  </script>
+
+</head>
+<body class="font-[Montserrat],sans-serif bg-[#0f0c29] text-white selection:bg-[var(--neon-purple)] selection:text-white">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Accessible nav -->
+  <header class="fixed w-full z-50 top-0 left-0 backdrop-blur-md bg-black/30 border-b border-white/10">
+    <nav class="container mx-auto px-4 py-3 flex items-center justify-between" role="navigation" aria-label="Primary">
+      <div class="flex items-center gap-3">
+        <a href="/" class="flex items-center gap-2 text-white group" aria-label="Memento22 home">
+          <i class="fa-solid fa-scissors text-[var(--neon-purple)]"></i>
+          <span class="font-bold tracking-widest">MEMENTO<span class="text-[var(--neon-cyan)]">22</span></span>
+        </a>
+      </div>
+
+      <button id="mobile-menu-button" aria-expanded="false" aria-controls="primary-menu" class="md:hidden p-2 rounded-md focus:ring-2 focus:ring-[var(--neon-cyan)]" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+      <ul id="primary-menu" class="hidden md:flex gap-8 text-sm font-bold tracking-widest" role="menubar" aria-label="Main menu">
+        <li role="none"><a role="menuitem" href="#concept" class="hover:text-[var(--neon-cyan)] transition">CONCEPT</a></li>
+        <li role="none"><a role="menuitem" href="#services" class="hover:text-[var(--neon-cyan)] transition">SERVICES</a></li>
+        <li role="none"><a role="menuitem" href="#coffee" class="hover:text-[var(--neon-cyan)] transition">COFFEE BAR</a></li>
+        <li role="none"><a role="menuitem" href="#book" class="px-4 py-2 border border-[var(--neon-purple)] text-[var(--neon-purple)] hover:bg-[var(--neon-purple)] hover:text-black transition uppercase text-xs font-bold tracking-widest">Book Chania</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main id="main" class="pt-20">
+    <section class="hero-container relative overflow-hidden" aria-labelledby="hero-heading">
+      <div class="absolute inset-0 opacity-20 mix-blend-overlay" aria-hidden="true" style="background-image:url('https://images.unsplash.com/photo-1517639493569-5666a780fd6c?auto=format&fit=crop&w=1600&q=60'); background-position:center bottom; background-size:cover;"></div>
+
+      <h1 id="hero-heading" class="sr-only">Memento22 — Coffee & Cuts Chania</h1>
+
+      <div class="hidden md:block absolute w-full top-12 text-center select-none" aria-hidden="true" style="font-family:'Cinzel',serif;font-size:14vw;color:rgba(255,255,255,0.06);line-height:0.8;">
+        MEMENTO
+      </div>
+
+      <div class="relative z-10 w-full max-w-4xl px-4">
+        <picture>
+          <source media="(min-width:1024px)" srcset="https://images.unsplash.com/photo-1576504677598-49a46e15a514?auto=format&fit=crop&w=1200&q=80 1200w, https://images.unsplash.com/photo-1576504677598-49a46e15a514?auto=format&fit=crop&w=800&q=80 800w" />
+          <source media="(min-width:640px)" srcset="https://images.unsplash.com/photo-1576504677598-49a46e15a514?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1576504677598-49a46e15a514?auto=format&fit=crop&w=600&q=80 600w" />
+          <img
+            src="https://images.unsplash.com/photo-1576504677598-49a46e15a514?auto=format&fit=crop&w=800&q=80"
+            alt="Classical marble bust statue used as central visual for Memento22"
+            class="mx-auto hero-image grayscale contrast-125 brightness-75 w-full h-[60vh] object-cover rounded-md shadow-[0_0_30px_rgba(176,38,255,0.25)]"
+            loading="eager"
+            width="1200" height="900" />
+        </picture>
+
+        <div class="mt-6 text-center">
+          <div class="inline-block bg-[var(--glass)] backdrop-blur-sm border-t border-b border-white/10 px-6 py-3 transform -skew-y-2">
+            <div class="flex gap-6 items-center uppercase tracking-widest text-xs font-bold">
+              <span><i class="fa-solid fa-mug-hot text-[var(--neon-cyan)]"></i> Espresso Bar</span>
+              <span>•</span>
+              <span><i class="fa-solid fa-cut text-[var(--neon-purple)]"></i> Master Barbers</span>
+              <span>•</span>
+              <span><i class="fa-solid fa-location-dot text-pink-500"></i> Chania, Crete</span>
+            </div>
+          </div>
+
+          <h2 class="mt-6 text-4xl md:text-7xl font-[Cinzel] font-black tracking-tight leading-none" style="letter-spacing:-0.02em;">
+            TWENTY<span class="text-[var(--neon-purple)]" style="text-shadow:0 0 10px #b026ff;">22</span>
+          </h2>
+          <p class="mt-3 text-[var(--neon-cyan)] uppercase tracking-widest text-sm">Chania's First Coffee & Barber Concept</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCEPT / SERVICES -->
+    <section id="services" class="py-16 bg-[#0b091a]">
+      <div class="container mx-auto px-4">
+        <header class="text-center mb-12" id="concept">
+          <p class="text-[var(--neon-cyan)] font-bold tracking-widest text-sm">THE CONCEPT</p>
+          <h3 class="text-3xl md:text-4xl font-[Cinzel] font-bold">More Than Just A Haircut</h3>
+          <div class="mx-auto mt-4 w-24 h-1 bg-[var(--neon-purple)] rounded"></div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <article class="p-6 border border-white/10 bg-white/5 rounded-md" aria-labelledby="feat1">
+            <div class="text-4xl text-[var(--neon-purple)] mb-4" aria-hidden="true"><i class="fa-solid fa-scissors"></i></div>
+            <h4 id="feat1" class="text-xl font-bold font-[Cinzel] mb-2">Precision Grooming</h4>
+            <p class="text-gray-300">Fades, beard sculpting, and hot towel shaves. Our barbers blend classical techniques with modern aesthetics.</p>
+          </article>
+
+          <article class="p-6 border border-white/10 bg-white/5 rounded-md transform md:-translate-y-6">
+            <div class="text-4xl text-[var(--neon-cyan)] mb-4" aria-hidden="true"><i class="fa-solid fa-mug-hot"></i></div>
+            <h4 class="text-xl font-bold font-[Cinzel] mb-2">Specialty Coffee</h4>
+            <p class="text-gray-300">Enjoy Chania's finest single-origin espresso or a cold brew. Relax while you wait or stay for the vibe.</p>
+          </article>
+
+          <article class="p-6 border border-white/10 bg-white/5 rounded-md">
+            <div class="text-4xl text-pink-400 mb-4" aria-hidden="true"><i class="fa-solid fa-people-roof"></i></div>
+            <h4 class="text-xl font-bold font-[Cinzel] mb-2">The Community</h4>
+            <p class="text-gray-300">Good music, retro vibes, and great conversation in the heart of Chania.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-12 bg-black/50 border-t border-white/5">
+      <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+        <figure class="relative">
+          <div class="absolute -inset-3 border-2 border-[var(--neon-purple)] opacity-50 translate-x-3 translate-y-3" aria-hidden="true"></div>
+          <img src="https://images.unsplash.com/photo-1503951914875-452162b7f30a?auto=format&fit=crop&w=1600&q=80" alt="Barber at work" loading="lazy" width="1200" height="800" class="w-full h-[320px] object-cover rounded-md grayscale hover:grayscale-0 transition" />
+        </figure>
+        <div>
+          <blockquote>
+            <p class="text-2xl md:text-3xl font-[Cinzel] font-bold leading-tight">"Finally, a place in Chania where the coffee is as good as the fade. The vibe is unmatched."</p>
+          </blockquote>
+          <figcaption class="mt-6 flex items-center gap-4">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Nikos P." class="w-12 h-12 rounded-full object-cover" loading="lazy" width="48" height="48" />
+            <div>
+              <div class="font-bold">Nikos P.</div>
+              <div class="text-[var(--neon-cyan)] text-sm">Loyal Customer</div>
+            </div>
+          </figcaption>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING FORM -->
+    <section id="book" class="py-16 bg-[#050510]">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <h3 class="text-2xl font-[Cinzel] font-bold mb-4">Book an Appointment</h3>
+        <p class="text-gray-400 mb-6">Use the form below to request a booking. We'll confirm availability via email or phone.</p>
+
+        <form id="booking-form" class="space-y-4 bg-white/5 p-6 rounded-md" aria-label="Booking form" novalidate>
+          <input type="text" name="address_line2" id="address_line2" class="sr-only" tabindex="-1" autocomplete="off" />
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="name" class="block text-sm font-medium">Full name</label>
+              <input required id="name" name="name" type="text" class="mt-1 block w-full rounded-md bg-black/30 border border-white/10 px-3 py-2" />
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium">Email</label>
+              <input required id="email" name="email" type="email" class="mt-1 block w-full rounded-md bg-black/30 border border-white/10 px-3 py-2" />
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-medium">Phone</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" class="mt-1 block w-full rounded-md bg-black/30 border border-white/10 px-3 py-2" />
+            </div>
+
+            <div>
+              <label for="service" class="block text-sm font-medium">Service</label>
+              <select id="service" name="service" required class="mt-1 block w-full rounded-md bg-black/30 border border-white/10 px-3 py-2">
+                <option value="">Select a service</option>
+                <option>Haircut — Standard</option>
+                <option>Fade / Precision Cut</option>
+                <option>Hot Towel Shave</option>
+                <option>Coffee & Table Seat</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="date" class="block text-sm font-medium">Preferred date</label>
+              <input id="date" name="date" type="date" class="mt-1 block w-full rounded-md bg-black/30 border border-white/10 px-3 py-2" />
+            </div>
+
+            <div>
+              <label for="time" class="block text-sm font-medium">Preferred time</label>
+              <input id="time" name="time" type="time" class="mt-1 block w-full rounded-md bg-black/30 border border-white/10 px-3 py-2" />
+            </div>
+          </div>
+
+          <div>
+            <label for="notes" class="block text-sm font-medium">Notes (optional)</label>
+            <textarea id="notes" name="notes" rows="3" class="mt-1 block w-full rounded-md bg-black/30 border border-white/10 px-3 py-2"></textarea>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <button type="submit" class="inline-flex items-center gap-2 px-4 py-2 bg-[var(--neon-purple)] text-black font-bold rounded-md shadow">Request Booking</button>
+            <div id="booking-status" role="status" aria-live="polite" class="text-sm text-gray-300"></div>
+          </div>
+        </form>
+
+        <script>
+          (function(){
+            const form = document.getElementById('booking-form');
+            const statusEl = document.getElementById('booking-status');
+
+            form.addEventListener('submit', async (e) => {
+              e.preventDefault();
+              statusEl.textContent = 'Sending...';
+              const formData = new FormData(form);
+
+              if (formData.get('address_line2')) {
+                statusEl.textContent = 'Submission blocked.';
+                return;
+              }
+
+              const payload = Object.fromEntries(formData.entries());
+              try {
+                const res = await fetch('/api/book', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(payload)
+                });
+                if (!res.ok) throw new Error('Network response was not ok');
+                const data = await res.json();
+                statusEl.textContent = data.message || 'Request received. We will contact you soon.';
+                form.reset();
+              } catch (err) {
+                console.error(err);
+                statusEl.textContent = 'There was an error sending your request. Please try again later.';
+              }
+            });
+
+            const mobileBtn = document.getElementById('mobile-menu-button');
+            const primaryMenu = document.getElementById('primary-menu');
+            mobileBtn?.addEventListener('click', () => {
+              const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+              mobileBtn.setAttribute('aria-expanded', String(!expanded));
+              primaryMenu.classList.toggle('hidden');
+            });
+          })();
+        </script>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-[#050510] border-t border-white/10">
+      <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
+        <div class="md:col-span-2">
+          <h4 class="text-2xl font-[Cinzel] font-bold">MEMENTO<span class="text-[var(--neon-purple)]">22</span></h4>
+          <p class="text-gray-400 mt-4 max-w-xs">Chania's destination for modern grooming and specialty coffee. Est. 2023</p>
+        </div>
+
+        <div>
+          <h5 class="font-bold text-white mb-3">HOURS</h5>
+          <ul class="text-gray-400 text-sm space-y-1">
+            <li>Mon - Fri: 10:00 - 20:00</li>
+            <li>Saturday: 10:00 - 18:00</li>
+            <li>Sunday: Closed</li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-bold text-white mb-3">FIND US</h5>
+          <p class="text-gray-400 text-sm">123 Old Harbor Lane<br/>Chania, Crete 73100</p>
+          <div class="flex gap-4 mt-3">
+            <a href="#" class="text-white" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="text-white" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center text-gray-500 text-sm">&copy; 2023 Memento22. All rights reserved.</div>
+    </footer>
+
+  </main>
+
+  <!-- Non-essential scripts: load after content -->
+  <script defer>
+    (function(){ document.documentElement.classList.remove('no-js'); })();
+  </script>
+
+</body>
+</html>
